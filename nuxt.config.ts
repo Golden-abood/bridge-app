@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "@vueuse/nuxt", "@pinia/nuxt"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxtjs/google-fonts",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    // "nuxt-server-utils",
+    // "@sidebase/nuxt-auth",
+  ],
 
   css: ["~/assets/main.scss"],
 
@@ -23,7 +30,16 @@ export default defineNuxtConfig({
       ],
     },
   },
-  ui: {
-    safelistColors: ["#ec912b"],
+
+  // nuxtServerUtils: {
+  //   mongodbUri: process.env.MONGODB_URI,
+  // },
+  runtimeConfig: {
+    MONGO_URI: process.env.MONGO_URI,
   },
+  // auth: {
+  //   provider: {
+  //     type: "auth.js",
+  //   },
+  // },
 });
